@@ -36,4 +36,8 @@ public interface FlooringOrdersUserIO {
     long readLong(String prompt);
     long readLong(String prompt, long min, long max);
     
+    String readLocalDate(String promptY, String promptM, String promptD);
+    
+    String readStringBDM(String prompt);
+    
 }

@@ -5,15 +5,31 @@
  */
 package com.kx.flooringorders.dao;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.time.LocalDateTime;
+
 /**
  *
  * @author khuxi
  */
 public class FlooringOrdersAuditDaoImpl implements FlooringOrdersAuditDao{
 
-    @Override
+    public static final String AUDIT_FILE = "audit.txt";
+   
     public void writeAuditEntry(String entry) throws FlooringOrdersDaoException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        PrintWriter out;
+       
+        try {
+            out = new PrintWriter(new FileWriter(AUDIT_FILE, true));
+        } catch (IOException e) {
+            throw new FlooringOrdersDaoException("Could not persist audit information.", e);
+        }
+ 
+        LocalDateTime timestamp = LocalDateTime.now();
+        out.println(timestamp.toString() + " : " + entry);
+        out.flush();
     }
     
 }

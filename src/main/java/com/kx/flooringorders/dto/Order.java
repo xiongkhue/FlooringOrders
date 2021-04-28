@@ -47,7 +47,7 @@ public class Order {
         this.orderorderNumber = orderorderNumber;
     }
 
-    public BigDecimal getorderNumber() {
+    public BigDecimal getOrderNumber() {
         return orderorderNumber;
     }
 
@@ -145,7 +145,7 @@ public class Order {
         if (obj==null || obj.getClass()!=this.getClass()) return false;
         if (obj instanceof Order) {
         Order order = (Order) obj;
-        return (this.getorderNumber().equals(order.getorderNumber()) && 
+        return (this.getOrderNumber().equals(order.getOrderNumber()) && 
         order.getCustomer().equals(this.getCustomer()) && 
         (order.getState().equals(this.getState())));
     }
@@ -154,6 +154,6 @@ public class Order {
 
     @Override
     public int hashCode() {
-        return this.getorderNumber().intValue();
+        return this.getOrderNumber().intValue();
     }
 }
