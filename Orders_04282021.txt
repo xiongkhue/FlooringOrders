@@ -1,0 +1,4 @@
+7,Kyle,OH,6.25,wood,340.00,5.15,4.75,1751.00,1615.00,210.38,3576.38
+
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCost
+PerSquareFoot,MaterialCost,LaborCost,Tax,Total

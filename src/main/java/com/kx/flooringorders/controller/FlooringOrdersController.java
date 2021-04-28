@@ -203,7 +203,6 @@ public class FlooringOrdersController {
     }
 
     private void removeOrder() throws FlooringOrdersDaoException {
-//        view.displayRemoveDVDBanner();
         String date = "";
         String[] setupDate = view.getDate().split("/");
         for (String s : setupDate) {

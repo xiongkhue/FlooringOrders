@@ -5,10 +5,22 @@
  */
 package com.kx.flooringorders;
 
+import com.kx.flooringorders.controller.FlooringOrdersController;
+import com.kx.flooringorders.dao.FlooringOrdersPersistenceException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 /**
  *
  * @author khuxi
  */
 public class App {
-    
+   public static void main(String[] args) throws FlooringOrdersPersistenceException {
+        
+        ApplicationContext ctx = 
+           new ClassPathXmlApplicationContext("applicationContext.xml");
+        FlooringOrdersController controller = 
+           ctx.getBean("controller", FlooringOrdersController.class);
+        controller.run();
+    } 
 }
